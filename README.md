@@ -45,11 +45,11 @@ No modules.
 |------|-------------|------|:--------:|
 | azure\_location | The location/region where the virtual network is created. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_name | The name of the Container Apps Managed Environment. Changing this forces a new resource to be created. | `string` | yes |
-| infrastructure\_subnet\_id | The existing Subnet to use for the Container Apps Control Plane. Changing this forces a new resource to be created. | `string` | yes |
-| internal\_load\_balancer\_enabled | Should the Container Environment operate in Internal Load Balancing Mode? Defaults to false. Changing this forces a new resource to be created. | `string` | yes |
 | log\_analytics\_workspace\_id | The ID for the Log Analytics Workspace to link this Container Apps Managed Environment to. Changing this forces a new resource to be created. | `string` | yes |
 | resource\_group\_name | The name of the resource group in which the Container App Environment is to be created. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_tags | A mapping of tags to assign to the resource. | `map(any)` | no |
+| infrastructure\_subnet\_id | The existing Subnet to use for the Container Apps Control Plane. Changing this forces a new resource to be created. | `string` | no |
+| internal\_load\_balancer\_enabled | Should the Container Environment operate in Internal Load Balancing Mode? Defaults to false. Changing this forces a new resource to be created. | `string` | no |
 
 ## Outputs
 
