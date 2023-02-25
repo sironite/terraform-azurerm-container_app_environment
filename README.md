@@ -27,7 +27,7 @@ module "container_app_environment" {
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 2.0.0 |
+| azurerm | >=3.43.0 |
 
 ## Modules
 
