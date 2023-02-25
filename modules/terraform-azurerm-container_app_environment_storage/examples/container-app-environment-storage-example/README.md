@@ -1,6 +1,6 @@
-# Terraform module | AzureRM - Subnet network security group association
+# Terraform module | AzureRM - Container app environment storage
 
-This Terraform module is designed to create a Subnet network security group association for Azure.
+This Terraform module is designed to create a Container app environment storage for Azure.
 
 ## Pre-requisites
 
@@ -16,13 +16,15 @@ module "subnet_network_security_group_association" {
   source  = "sironite/subnet_network_security_group_association/azurerm"
   version = "x.x.x"
 
-  subnet_id                   = var.subnet_id
-  network_security_group_id   = var.network_security_group_id
+  container_app_environment_id = var.container_app_environment_id
+
+  account_name                 = var.storage_account_name
+  share_name                   = var.storage_share_name
+  access_key                   = var.storage_account_access_key
+  access_mode                  = var.storage_access_mode
 }
 
-
 ```
-
 ## Authors
 
 The module is maintained by [Sironite](https://github.com/sironite)
