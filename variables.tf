@@ -22,13 +22,13 @@ variable "infrastructure_subnet_id" {
   description = "The existing Subnet to use for the Container Apps Control Plane. Changing this forces a new resource to be created. "
   type        = string
   sensitive   = false
-  default     = ""
+  default     = null
 }
 variable "internal_load_balancer_enabled" {
   description = "Should the Container Environment operate in Internal Load Balancing Mode? Defaults to false. Changing this forces a new resource to be created."
   type        = string
-  sensitive   = false
-  default     = ""
+  sensitive   = bool
+  default     = false
 }
 variable "container_app_environment_tags" {
   description = " A mapping of tags to assign to the resource."
