@@ -8,9 +8,9 @@ content: |-
 
   # Usage - Module
 
-  ## Network Watcher Flow Log
+  ## Container app environment
   ```hcl
-  {{ include "examples/network-watcher-flow-log-example/main.tf" }}
+  {{ include "examples/container-app-environment-example/main.tf" }}
   ```
 
   {{ .Providers }}
