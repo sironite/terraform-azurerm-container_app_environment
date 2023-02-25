@@ -26,8 +26,8 @@ variable "infrastructure_subnet_id" {
 }
 variable "internal_load_balancer_enabled" {
   description = "Should the Container Environment operate in Internal Load Balancing Mode? Defaults to false. Changing this forces a new resource to be created."
-  type        = string
-  sensitive   = bool
+  type        = bool
+  sensitive   = false
   default     = false
 }
 variable "container_app_environment_tags" {
