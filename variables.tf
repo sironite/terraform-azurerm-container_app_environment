@@ -33,5 +33,5 @@ variable "internal_load_balancer_enabled" {
 variable "container_app_environment_tags" {
   description = " A mapping of tags to assign to the resource."
   type        = map(any)
-  default     = {}
+  default     = null
 }
