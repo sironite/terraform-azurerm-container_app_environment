@@ -18,8 +18,3 @@ variable "log_analytics_workspace_id" {
   type        = string
   sensitive   = false
 }
-variable "container_app_environment_tags" {
-  description = " A mapping of tags to assign to the resource."
-  type        = map(any)
-  default     = {}
-}
