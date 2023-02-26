@@ -8,11 +8,9 @@ content: |-
 
   # Usage - Module
 
-  ## Container app environment
   ```hcl
-  {{ include "examples/container-app-environment-example/main.tf" }}
+  {{ include "examples/container-app-environment-storage-example/main.tf" }}
   ```
-
   {{ .Providers }}
 
   {{ .Modules }}
@@ -24,9 +22,6 @@ content: |-
   {{ .Outputs }}
 
   {{ .Footer }}
-
-recursive:
-  enabled: true
 
 output:
   file: README.md

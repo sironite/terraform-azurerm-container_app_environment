@@ -1,6 +1,6 @@
-# Terraform module | AzureRM - Container app environment
+# Terraform module | AzureRM - Container app environment storage
 
-This Terraform module is designed to create a Container app environment for Azure.
+This Terraform module is designed to create a Container app environment storage for Azure.
 
 ## Pre-requisites
 
@@ -9,7 +9,7 @@ Using the modules requires the following pre-requisites:
 
 ## Usage
 
-`container_app_environment`
+`azurerm_container_app_environment_storage`
 
 ```hcl
 module "container_app_environment" {
@@ -28,8 +28,20 @@ module "container_app_environment" {
   tags = var.container_app_environment_tags
 }
 
-```
+module "azurerm_container_app_environment_storage" {
+  source  = "sironite/container_app_environment/azurerm//modules/terraform-azurerm-container_app_environment_storage"
+  version = "x.x.x"
 
+  container_app_environment_storage_name = var.container_app_environment_storage_name
+  container_app_environment_id           = module.container_app_environment.container_app_environment_id
+
+  storage_account_name       = var.storage_account_name
+  storage_share_name         = var.storage_share_name
+  storage_account_access_key = var.storage_account_access_key
+  storage_access_mode        = var.storage_access_mode
+}
+
+```
 ## Authors
 
 The module is maintained by [Sironite](https://github.com/sironite)
