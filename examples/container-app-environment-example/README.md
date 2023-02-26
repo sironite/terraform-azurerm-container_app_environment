@@ -9,18 +9,23 @@ Using the modules requires the following pre-requisites:
 
 ## Usage
 
-`ip_group`
+`container_app_environment`
 
 ```hcl
-module "ip_group" {
-  source  = "sironite/ip_group/azurerm"
+module "container_app_environment" {
+  source  = "sironite/container_app_environment/azurerm"
   version = "x.x.x"
 
-  ip_group_name       = var.ip_group_name
-  azure_location      = var.azure_location
-  resource_group_name = var.resource_group_name
+  container_app_environment_name  = var.container_app_environment_name
+  azure_location                  = var.azure_location
+  resource_group_name             = var.resource_group_name
 
-  ip_group_cidrs = var.virtual_network_cidr
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  infrastructure_subnet_id       = var.infrastructure_subnet_id
+  internal_load_balancer_enabled = var.internal_load_balancer_enabled
+
+  tags = var.container_app_environment_tags
 }
 
 ```
