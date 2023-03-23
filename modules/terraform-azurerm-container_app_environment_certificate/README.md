@@ -28,8 +28,8 @@ module "azurerm_container_app_environment_certificate" {
   container_app_environment_certificate_name = var.container_app_environment_certificate_name
   container_app_environment_id               = module.container_app_environment.container_app_environment_id
 
-  certificate_blob_base64 = var.certificate_blob_base64
-  certificate_password    = var.certificate_password
+  certificate_blob_base64      = var.certificate_blob_base64
+  certificate_password         = var.certificate_password
 }
 ```
 ## Providers
@@ -52,9 +52,9 @@ No modules.
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| container\_app\_environment\_certificate\_blob\_base64 | The base64-encoded certificate blob. Changing this forces a new resource to be created. | `string` | yes |
+| certificate\_blob\_base64 | The base64-encoded certificate blob. Changing this forces a new resource to be created. | `string` | yes |
+| certificate\_password | The password for the certificate. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_certificate\_name | The name of the Container App Environment Certificate. Changing this forces a new resource to be created. | `string` | yes |
-| container\_app\_environment\_certificate\_password | The password for the certificate. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_id | The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created. | `string` | yes |
 
 ## Outputs
