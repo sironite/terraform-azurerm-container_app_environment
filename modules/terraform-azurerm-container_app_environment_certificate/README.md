@@ -9,9 +9,9 @@ module "container_app_environment" {
   source  = "sironite/container_app_environment/azurerm"
   version = "x.x.x"
 
-  container_app_environment_name  = var.container_app_environment_name
-  azure_location                  = var.azure_location
-  resource_group_name             = var.resource_group_name
+  container_app_environment_name = var.container_app_environment_name
+  azure_location                 = var.azure_location
+  resource_group_name            = var.resource_group_name
 
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
@@ -21,17 +21,15 @@ module "container_app_environment" {
   tags = var.container_app_environment_tags
 }
 
-module "azurerm_container_app_environment_storage" {
-  source  = "sironite/container_app_environment/azurerm//modules/terraform-azurerm-container_app_environment_storage"
+module "azurerm_container_app_environment_certificate" {
+  source  = "sironite/container_app_environment/azurerm//modules/terraform-azurerm-container_app_environment_certificate"
   version = "x.x.x"
 
-  container_app_environment_storage_name = var.container_app_environment_storage_name
-  container_app_environment_id           = module.container_app_environment.container_app_environment_id
+  container_app_environment_certificate_name = var.container_app_environment_certificate_name
+  container_app_environment_id               = module.container_app_environment.container_app_environment_id
 
-  storage_account_name       = var.storage_account_name
-  storage_share_name         = var.storage_share_name
-  storage_account_access_key = var.storage_account_access_key
-  storage_access_mode        = var.storage_access_mode
+  certificate_blob_base64 = var.certificate_blob_base64
+  certificate_password    = var.certificate_password
 }
 ```
 ## Providers
@@ -48,18 +46,16 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azurerm_container_app_environment_storage.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app_environment_storage) | resource |
+| [azurerm_container_app_environment_certificate.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app_environment_certificate) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
+| container\_app\_environment\_certificate\_blob\_base64 | The base64-encoded certificate blob. Changing this forces a new resource to be created. | `string` | yes |
+| container\_app\_environment\_certificate\_name | The name of the Container App Environment Certificate. Changing this forces a new resource to be created. | `string` | yes |
+| container\_app\_environment\_certificate\_password | The password for the certificate. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_id | The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created. | `string` | yes |
-| container\_app\_environment\_storage\_name | The name for this Container App Environment Storage. Changing this forces a new resource to be created. | `string` | yes |
-| storage\_access\_mode | The access mode to connect this storage to the Container App. Possible values include `ReadOnly` and `ReadWrite`. Changing this forces a new resource to be created. | `string` | yes |
-| storage\_account\_access\_key | The Storage Account Access Key. | `string` | yes |
-| storage\_account\_name | The Azure Storage Account in which the Share to be used is located. Changing this forces a new resource to be created. | `string` | yes |
-| storage\_share\_name | The name of the Azure Storage Share to use. Changing this forces a new resource to be created. | `string` | yes |
 
 ## Outputs
 
