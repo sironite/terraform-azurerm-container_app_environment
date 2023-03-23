@@ -8,12 +8,12 @@ variable "container_app_environment_id" {
   type        = string
   sensitive   = false
 }
-variable "container_app_environment_certificate_blob_base64" {
+variable "certificate_blob_base64" {
   description = "The base64-encoded certificate blob. Changing this forces a new resource to be created."
   type        = string
   sensitive   = false
 }
-variable "container_app_environment_certificate_password" {
+variable "certificate_password" {
   description = "The password for the certificate. Changing this forces a new resource to be created."
   type        = string
   sensitive   = true
