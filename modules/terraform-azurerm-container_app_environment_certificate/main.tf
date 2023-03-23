@@ -1,5 +1,5 @@
 resource "azurerm_container_app_environment_certificate" "this" {
-  count = var.container_app_environment_storage_name == null ? 0 : 1
+  count = var.container_app_environment_certificate_name == null ? 0 : 1
 
   name                         = var.container_app_environment_certificate_name
   container_app_environment_id = var.container_app_environment_id

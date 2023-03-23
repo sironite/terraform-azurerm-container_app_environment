@@ -45,11 +45,11 @@ module "azurerm_container_app_environment_storage" {
   container_app_environment_storage_name = var.container_app_environment_storage_name
   container_app_environment_id           = azurerm_container_app_environment.this.id
 
-  storage_account_name = var.storage_account_name
-  storage_share_name   = var.storage_share_name
-  storage_access_mode  = var.storage_access_mode
-  access_key           = var.storage_account_access_key
-  access_mode          = var.storage_access_mode
+  storage_account_name       = var.storage_account_name
+  storage_share_name         = var.storage_share_name
+  storage_access_mode        = var.storage_access_mode
+  storage_account_access_key = var.storage_account_access_key
+
 
   depends_on = [
     azurerm_container_app_environment.this

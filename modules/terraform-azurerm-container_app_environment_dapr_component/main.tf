@@ -3,7 +3,7 @@ resource "azurerm_container_app_environment_dapr_component" "this" {
 
   name                         = var.container_app_environment_dapr_name
   container_app_environment_id = var.container_app_environment_id
-  component                    = var.container_app_environment_dapr_component
+  component_type               = var.container_app_environment_dapr_component
   version                      = var.container_app_environment_dapr_version
 
 }
