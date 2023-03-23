@@ -53,10 +53,10 @@ No modules.
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| azurerm\_container\_app\_environment\_certificate\_name | The name of the Container App Environment Certificate. Changing this forces a new resource to be created. | `string` | yes |
-| azurerm\_container\_app\_environment\_id | The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_dapr\_component | The Dapr component. Changing this forces a new resource to be created. | `string` | yes |
+| container\_app\_environment\_dapr\_name | The name of the Container App Environment Dapr. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_dapr\_version | The Dapr version. Changing this forces a new resource to be created. | `string` | yes |
+| container\_app\_environment\_id | The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created. | `string` | yes |
 
 ## Outputs
 
