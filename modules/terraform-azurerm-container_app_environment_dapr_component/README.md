@@ -28,8 +28,8 @@ module "azurerm_container_app_environment_dapr_component" {
   container_app_environment_dapr_name = var.container_app_environment_dapr_name
   container_app_environment_id        = module.container_app_environment.container_app_environment_id
 
-  container_app_environment_dapr_component = var.container_app_environment_dapr_component
-  container_app_environment_dapr_version   = var.container_app_environment_dapr_version
+  dapr_component = var.dapr_component
+  dapr_version   = var.dapr_version
 
 }
 ```
@@ -53,10 +53,10 @@ No modules.
 
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
-| container\_app\_environment\_dapr\_component | The Dapr component. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_dapr\_name | The name of the Container App Environment Dapr. Changing this forces a new resource to be created. | `string` | yes |
-| container\_app\_environment\_dapr\_version | The Dapr version. Changing this forces a new resource to be created. | `string` | yes |
 | container\_app\_environment\_id | The ID of the Container App Environment to which this storage belongs. Changing this forces a new resource to be created. | `string` | yes |
+| dapr\_component | The Dapr component. Changing this forces a new resource to be created. | `string` | yes |
+| dapr\_version | The Dapr version. Changing this forces a new resource to be created. | `string` | yes |
 
 ## Outputs
 
