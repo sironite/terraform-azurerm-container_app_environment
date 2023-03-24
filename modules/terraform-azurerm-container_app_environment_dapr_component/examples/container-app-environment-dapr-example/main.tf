@@ -21,7 +21,7 @@ module "azurerm_container_app_environment_dapr_component" {
   container_app_environment_dapr_name = var.container_app_environment_dapr_name
   container_app_environment_id        = module.container_app_environment.container_app_environment_id
 
-  container_app_environment_dapr_component = var.container_app_environment_dapr_component
-  container_app_environment_dapr_version   = var.container_app_environment_dapr_version
+  dapr_component = var.dapr_component
+  dapr_version   = var.dapr_version
 
 }

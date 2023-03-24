@@ -8,12 +8,12 @@ variable "container_app_environment_id" {
   type        = string
   sensitive   = false
 }
-variable "container_app_environment_dapr_component" {
+variable "dapr_component" {
   description = "The Dapr component. Changing this forces a new resource to be created."
   type        = string
   sensitive   = false
 }
-variable "container_app_environment_dapr_version" {
+variable "dapr_version" {
   description = "The Dapr version. Changing this forces a new resource to be created."
   type        = string
   sensitive   = false
