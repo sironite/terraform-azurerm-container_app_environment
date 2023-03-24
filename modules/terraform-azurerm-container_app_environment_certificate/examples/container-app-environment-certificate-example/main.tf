@@ -21,6 +21,6 @@ module "azurerm_container_app_environment_certificate" {
   container_app_environment_certificate_name = var.container_app_environment_certificate_name
   container_app_environment_id               = module.container_app_environment.container_app_environment_id
 
-  certificate_blob_base64      = var.certificate_blob_base64
-  certificate_password         = var.certificate_password
+  certificate_blob_base64 = var.certificate_blob_base64
+  certificate_password    = var.certificate_password
 }
