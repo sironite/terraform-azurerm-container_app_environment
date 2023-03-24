@@ -10,9 +10,9 @@ module "container_app_environment" {
   source  = "sironite/container_app_environment/azurerm"
   version = "x.x.x"
 
-  container_app_environment_name  = var.container_app_environment_name
-  azure_location                  = var.azure_location
-  resource_group_name             = var.resource_group_name
+  container_app_environment_name = var.container_app_environment_name
+  azure_location                 = var.azure_location
+  resource_group_name            = var.resource_group_name
 
   log_analytics_workspace_id = var.log_analytics_workspace_id
 
@@ -31,7 +31,11 @@ module "container_app_environment" {
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| azurerm\_container\_app\_environment\_certificate | ./modules/terraform-azurerm-container_app_environment_certificate | n/a |
+| azurerm\_container\_app\_environment\_dapr\_component | ./modules/terraform-azurerm-container_app_environment_dapr_component | n/a |
+| azurerm\_container\_app\_environment\_storage | ./modules/terraform-azurerm-container_app_environment_storage | n/a |
 
 ## Resources
 
@@ -47,9 +51,20 @@ No modules.
 | container\_app\_environment\_name | The name of the Container Apps Managed Environment. Changing this forces a new resource to be created. | `string` | yes |
 | log\_analytics\_workspace\_id | The ID for the Log Analytics Workspace to link this Container Apps Managed Environment to. Changing this forces a new resource to be created. | `string` | yes |
 | resource\_group\_name | The name of the resource group in which the Container App Environment is to be created. Changing this forces a new resource to be created. | `string` | yes |
+| certificate\_blob\_base64 | The base64-encoded certificate blob. Changing this forces a new resource to be created. | `string` | no |
+| certificate\_password | The password for the certificate. Changing this forces a new resource to be created. | `string` | no |
+| container\_app\_environment\_certificate\_name | The name of the Container App Environment Certificate. Changing this forces a new resource to be created. | `string` | no |
+| container\_app\_environment\_dapr\_component | The component for the Container App Environment Dapr. Changing this forces a new resource to be created. | `string` | no |
+| container\_app\_environment\_dapr\_name | The name of the Container App Environment Dapr. Changing this forces a new resource to be created. | `string` | no |
+| container\_app\_environment\_dapr\_version | The version for the Container App Environment Dapr. Changing this forces a new resource to be created. | `string` | no |
+| container\_app\_environment\_storage\_name | The name of the Container App Environment Storage. Changing this forces a new resource to be created. | `string` | no |
 | container\_app\_environment\_tags | A mapping of tags to assign to the resource. | `map(any)` | no |
 | infrastructure\_subnet\_id | The existing Subnet to use for the Container Apps Control Plane. Changing this forces a new resource to be created. | `string` | no |
 | internal\_load\_balancer\_enabled | Should the Container Environment operate in Internal Load Balancing Mode? Defaults to false. Changing this forces a new resource to be created. | `bool` | no |
+| storage\_access\_mode | The access mode for the storage account. Changing this forces a new resource to be created. | `string` | no |
+| storage\_account\_access\_key | The access key for the storage account. Changing this forces a new resource to be created. | `string` | no |
+| storage\_account\_name | The name of the storage account. Changing this forces a new resource to be created. | `string` | no |
+| storage\_share\_name | The name of the storage share. Changing this forces a new resource to be created. | `string` | no |
 
 ## Outputs
 

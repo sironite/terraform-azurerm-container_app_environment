@@ -13,3 +13,15 @@ module "container_app_environment" {
 
   tags = var.container_app_environment_tags
 }
+
+module "azurerm_container_app_environment_dapr_component" {
+  source  = "sironite/container_app_environment/azurerm//modules/terraform-azurerm-container_app_environment_dapr_component"
+  version = "x.x.x"
+
+  container_app_environment_dapr_name = var.container_app_environment_dapr_name
+  container_app_environment_id        = module.container_app_environment.container_app_environment_id
+
+  dapr_component = var.dapr_component
+  dapr_version   = var.dapr_version
+
+}
